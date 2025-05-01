@@ -1,6 +1,6 @@
 # AWS Cloud Cost Optimization Chatbot 🤖
 
-A scalable, serverless chatbot pipeline built using AWS services and React.js to analyze and optimize cloud resource usage based on user queries. The system captures user input, interprets it using Amazon Lex, invokes relevant Lambda workflows, and leverages Amazon SageMaker for predictive analytics, returning results via DynamoDB and optional notification channels.
+A scalable, serverless chatbot pipeline built using AWS services and React.js to analyze and optimize cloud resource usage based on user queries. The system captures user input, interprets it using Amazon Lex, invokes relevant Lambda workflows, and leverages Amazon SageMaker for predictive analytics, returning results via DynamoDB.
 
 ## 🏗️ AWS Architecture
 ![image](https://github.com/user-attachments/assets/7b4ee4b2-fa21-444d-bf41-c2b59adda69e)
@@ -114,6 +114,78 @@ The chatbot interface was built using React.js to enable a clean and interactive
 * **Input**: JSON-formatted vector of historical EC2 usage metrics (e.g., CPUUtilization, Network I/O, Disk Ops) associated with an instance_id
 * **Model**: Trained Random Forest classifier designed to evaluate resource utilization patterns and classify instance efficiency
 * **Output**: Label indicating whether the instance is Underutilized, Overutilized, or Right-Sized, enabling actionable rightsizing recommendations
+
+## 💬 Example Bot Interactions
+
+Here are some example interactions with the chatbot:
+
+```typescript
+// Example 1: SQS Message Processing
+Input: "Check my SQS queue metrics"
+Output: "Service: SQS, Cost: 0.00 USD, Utilization Summary: SentMessageSize: 968.7351190476619, NumberOfMessagesSent: 0.11980669014747812, ApproximateNumberOfMessagesDelayed: 0.0"
+
+// Example 2: Lambda Function Analysis
+Input: "Can you get my Lambda usage from 2025-04-01 to 2025-04-15?"
+Output: "Service: Lambda, Cost: 0.00 USD, Utilization Summary: Errors: 0.0, ConcurrentExecutions: 3.0, Duration: 2812.865"
+
+// Example 3: EC2 Instance Optimization
+Input: "Is my EC2 instance i-0efd4ce1cbdccabb0 right-sized?"
+Output: "Scale down to a smaller instance to reduce costs. Suggested type: t2.xlarge"
+```
+
+
+## 🚀 Running the Application
+
+### Development Setup
+
+```bash
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## 📡 API Interaction
+
+You can interact with the chatbot in two ways:
+
+### 1. Using the Chatbot UI
+
+Simply type your message in the chat interface. For example:
+```
+Check my EC2 usage from 2025-01-01 to 2025-04-04
+```
+
+### 2. Using Postman or API Client
+
+
+Headers:
+```
+Content-Type: application/json
+```
+
+Request Body:
+```json
+{
+  "message": "Check my EC2 usage from 2025-01-01 to 2025-04-04"
+}
+```
+
+Response:
+```json
+{
+  "type": "bot",
+  "content": "Processing your request...",
+  "timestamp": "2025-03-20T10:30:00Z"
+}
+```
 
 ## 📸 Output Preview
 
