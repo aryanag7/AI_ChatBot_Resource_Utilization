@@ -1,4 +1,4 @@
-<h1 align="center"> AWS Cloud Cost Optimization Chatbot 🤖</h1>
+<h2 align="center"> AWS Cloud Cost Optimization Chatbot 🤖</h1>
 
 <p align="center">A scalable, serverless chatbot pipeline built using AWS services and React.js to analyze and optimize cloud resource usage based on user queries. The system captures user input, interprets it using Amazon Lex, invokes relevant Lambda workflows, and leverages Amazon SageMaker for predictive analytics, returning results via DynamoDB.
 </p>
