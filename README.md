@@ -1,6 +1,7 @@
-# AWS Cloud Cost Optimization Chatbot 🤖
+<h1 align="center"> AWS Cloud Cost Optimization Chatbot 🤖</h1>
 
-A scalable, serverless chatbot pipeline built using AWS services and React.js to analyze and optimize cloud resource usage based on user queries. The system captures user input, interprets it using Amazon Lex, invokes relevant Lambda workflows, and leverages Amazon SageMaker for predictive analytics, returning results via DynamoDB.
+<p align="center">A scalable, serverless chatbot pipeline built using AWS services and React.js to analyze and optimize cloud resource usage based on user queries. The system captures user input, interprets it using Amazon Lex, invokes relevant Lambda workflows, and leverages Amazon SageMaker for predictive analytics, returning results via DynamoDB.
+</p>
 
 ## 🏗️ AWS Architecture
 ![image](https://github.com/user-attachments/assets/7b4ee4b2-fa21-444d-bf41-c2b59adda69e)
